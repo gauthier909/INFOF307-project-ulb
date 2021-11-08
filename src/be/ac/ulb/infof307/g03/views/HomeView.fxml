@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.ac.ulb.infof307.g03.viewsControllers.HomeViewController">
+    <Button fx:id="createProjectButton" layoutX="22.0" layoutY="15.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="132.0" text="Create project">
+        <tooltip>
+            <Tooltip text="Your journey starts here: create a project" />
+        </tooltip></Button>
+
+    <Button fx:id="importButton" layoutX="176.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="132.0" text="Import project(s)">
+      <tooltip>
+         <Tooltip text="Import projects locally or with Dropbox and Google Drive" />
+      </tooltip></Button>
+    <Button fx:id="exportButton" layoutX="330.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="132.0" text="Export project(s)">
+      <tooltip>
+         <Tooltip text="Export projects locally or with Dropbox and Google Drive" />
+      </tooltip></Button>
+    <Button fx:id="calendarButton" layoutX="676.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="43.0">
+        <graphic>
+            <ImageView fitHeight="31.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@images/calendar.png" />
+            </ImageView>
+        </graphic>
+      <tooltip>
+         <Tooltip text="Open the calendar view" />
+      </tooltip>
+    </Button>
+    <Button fx:id="profileButton" layoutX="734.0" layoutY="15.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="43.0">
+        <graphic>
+            <ImageView fitHeight="22.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@images/profile.png" />
+            </ImageView>
+        </graphic>
+      <tooltip>
+         <Tooltip text="Manage your account informations" />
+      </tooltip>
+    </Button>
+    <Button fx:id="logoutButton" layoutX="791.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="78.0" text="Logout" />
+    <SplitPane dividerPositions="0.5" layoutY="68.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="900.0">
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="250.0">
+            <ListView fx:id="projectList" layoutY="56.0" prefHeight="460.0" prefWidth="250.0">
+            <tooltip>
+               <Tooltip text="Double click on a project to open his children" />
+            </tooltip></ListView>
+            <Button fx:id="homeButton" layoutX="57.0" layoutY="2.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="46.0">
+                <graphic>
+                    <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/home.png" />
+                    </ImageView>
+                </graphic>
+            <tooltip>
+               <Tooltip text="Go back to roots projects" />
+            </tooltip>
+            </Button>
+            <Button fx:id="goBackButton" layoutX="132.0" layoutY="2.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="46.0">
+                <graphic>
+                    <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/back_icon.png" />
+                    </ImageView>
+                </graphic>
+            <tooltip>
+               <Tooltip text="Go back to the parent of the current project" />
+            </tooltip>
+            </Button>
+        </AnchorPane>
+        <AnchorPane prefHeight="500.0" prefWidth="650.0">
+            <Label fx:id="projectNameLabel" layoutX="39.0" layoutY="14.0" prefHeight="26.0" prefWidth="520.0" />
+            <Label fx:id="projectDescriptionLabel" layoutX="39.0" layoutY="118.0" prefHeight="64.0" prefWidth="520.0" wrapText="true" />
+            <Label fx:id="projectDateLabel" layoutX="39.0" layoutY="49.0" prefHeight="26.0" prefWidth="520.0" />
+            <Label fx:id="tagsLabel" layoutX="39.0" layoutY="85.0" prefHeight="25.0" prefWidth="520.0" />
+            <Label fx:id="passwordLabel" layoutX="39.0" layoutY="108.0" prefHeight="25.0" prefWidth="520.0" />
+            <Button fx:id="createSubProjectButton" layoutX="312.0" layoutY="197.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="154.0" text="CreateSubProject">
+            <tooltip>
+               <Tooltip text="Create a child of the current project selected" />
+            </tooltip></Button>
+            <Button fx:id="viewTaskButton" layoutX="159.0" layoutY="239.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="ViewTasks">
+            <tooltip>
+               <Tooltip text="Open Task managing screen of the current project" />
+            </tooltip></Button>
+            <Button fx:id="editButton" layoutX="488.0" layoutY="197.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" text="Edit">
+            <tooltip>
+               <Tooltip text="Open screen for editing data of the current project" />
+            </tooltip></Button>
+            <Button fx:id="manageCollabButton" layoutX="312.0" layoutY="239.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="154.0" text="Manage Collaborator">
+            <tooltip>
+               <Tooltip text="View all collaborators, remove and add them" />
+            </tooltip></Button>
+            <Line endX="536.0" layoutX="104.0" layoutY="285.0" startX="-112.0" />
+            <ImageView fitHeight="135.0" fitWidth="154.0" layoutX="39.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@images/geet.png" />
+            </ImageView>
+            <Button fx:id="initButton" layoutX="226.0" layoutY="330.0" mnemonicParsing="false" text="Init">
+            <tooltip>
+               <Tooltip text="Initialize the project on Geet, this will automatically create the master branch" />
+            </tooltip></Button>
+            <Button fx:id="addButton" layoutX="406.0" layoutY="330.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" text="Add Changes">
+            <tooltip>
+               <Tooltip text="All changes since last commit will be taken in account for the next commit " />
+            </tooltip></Button>
+            <Button fx:id="branchButton" layoutX="275.0" layoutY="330.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="View Branches">
+            <tooltip>
+               <Tooltip text="Checkout to another branch or create a new one" />
+            </tooltip></Button>
+            <Button fx:id="commitButton" layoutX="406.0" layoutY="367.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="114.0" text="Commit changes">
+            <tooltip>
+               <Tooltip text="Open screen dialog to commit changes and add a commit message" />
+            </tooltip></Button>
+         <Label fx:id="currentBranchLabel" layoutX="226.0" layoutY="404.0" prefHeight="17.0" prefWidth="294.0" text="Current branch: " />
+         <Label fx:id="currentVersionLabel" layoutX="226.0" layoutY="440.0" prefHeight="17.0" prefWidth="294.0" text="Version: " />
+         <Button fx:id="statsButton" layoutX="69.0" layoutY="239.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Stats">
+            <tooltip>
+                <Tooltip text="Show the statistics concerning this project" />
+            </tooltip></Button>
+         <Button fx:id="versionButton" layoutX="275.0" layoutY="367.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" text="View Versions">
+            <tooltip>
+               <Tooltip text="See all past commit and be able to revert from a past version" />
+            </tooltip></Button>
+         <Button fx:id="passwordButton" layoutX="488.0" layoutY="239.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" text="lock project">
+            <tooltip>
+               <Tooltip text="Create a password for this project, users will not be able to import the project without entering the password" />
+            </tooltip></Button>
+         <Button fx:id="helpButton" layoutX="586.0" layoutY="487.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="8.0">
+            <graphic>
+                <ImageView fitHeight="21.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@images/question_mark.png" />
+                </ImageView>
+            </graphic>
+            <tooltip>
+               <Tooltip text="Get Help" />
+            </tooltip>
+         </Button>
+        </AnchorPane>
+    </SplitPane>
+   <Button fx:id="globalStatsButton" layoutX="480.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="132.0" text="Global stats">
+    <tooltip>
+        <Tooltip text="Show the statistics concerning all projects" />
+    </tooltip></Button>
+</AnchorPane>

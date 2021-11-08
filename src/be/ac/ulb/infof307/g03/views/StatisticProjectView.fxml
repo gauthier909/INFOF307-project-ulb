@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.ac.ulb.infof307.g03.viewsControllers.StatisticProjectViewController">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" VBox.vgrow="ALWAYS">
+        <children>
+            <Label layoutX="51.0" layoutY="88.0" prefHeight="17.0" prefWidth="264.0" text="Number of collaborator(s):" />
+            <Label fx:id="labelPersonne" layoutX="227.0" layoutY="89.0" prefHeight="17.0" prefWidth="99.0" />
+            <Label layoutX="344.0" layoutY="89.0" prefHeight="17.0" prefWidth="253.0" text="Number of task(s) left:" />
+            <Label layoutX="597.0" layoutY="89.0" prefHeight="17.0" prefWidth="226.0" text="Estimated duration of the project:" />
+            <Label layoutX="914.0" layoutY="89.0" prefHeight="17.0" prefWidth="190.0" text="Real duration of the project:" />
+            <Label fx:id="labelTache" layoutX="495.0" layoutY="89.0" prefHeight="17.0" prefWidth="55.0" />
+            <Label fx:id="labelEstime" layoutX="823.0" layoutY="89.0" prefHeight="17.0" prefWidth="55.0" />
+            <Label fx:id="labelReel" layoutX="1104.0" layoutY="88.0" prefHeight="17.0" prefWidth="99.0" />
+            <Label layoutX="504.0" layoutY="26.0" prefHeight="31.0" prefWidth="273.0" text="Project's statistics:" textAlignment="CENTER" underline="true">
+                <font>
+                    <Font name="Arial Black" size="21.0" />
+                </font>
+            </Label>
+            <Button fx:id="goBackButton" layoutX="1194.0" layoutY="29.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Back" />
+            <PieChart fx:id="pieChartTaskCollab" layoutX="51.0" layoutY="285.0" prefHeight="291.0" prefWidth="351.0" />
+         <BarChart fx:id="barChartNumberOfCollabPerTask" barGap="1.0" categoryGap="1.0" layoutX="465.0" layoutY="285.0" prefHeight="291.0" prefWidth="351.0">
+           <xAxis>
+             <CategoryAxis side="BOTTOM" />
+           </xAxis>
+           <yAxis>
+             <NumberAxis id="barChartNumberOfCollabPerTask" autoRanging="false" minorTickCount="1" minorTickLength="1.0" prefHeight="362.0" prefWidth="28.0" side="LEFT" tickLabelGap="2.0" tickLength="4.0" upperBound="10.0" />
+           </yAxis>
+         </BarChart>
+         <Button fx:id="exportButtonCsv" layoutX="1146.0" layoutY="674.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" text="Export to CSV" />
+         <PieChart fx:id="pieChartAsssignedTask" layoutX="889.0" layoutY="285.0" prefHeight="291.0" prefWidth="351.0" />
+         <ProgressBar fx:id="dateProgressBar" layoutX="50.0" layoutY="187.0" prefHeight="31.0" prefWidth="1094.0" progress="0.0" />
+         <Label layoutX="465.0" layoutY="163.0" prefHeight="16.0" prefWidth="264.0" text="Time before the end of the project" />
+         <Button fx:id="exportButtonJson" layoutX="1022.0" layoutY="674.0" mnemonicParsing="false" text="Export to JSON" />
+        </children>
+    </AnchorPane>
+</VBox>

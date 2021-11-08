@@ -1,0 +1,12 @@
+.idea/
+/out/
+*.iml
+MyDataBase.db
+TestDataBase.db
+/users/
+/target/
+/tokens/
+Geet/*
+Geet/
+testGeet/
+testGeet/*
